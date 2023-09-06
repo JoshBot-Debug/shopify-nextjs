@@ -1,10 +1,11 @@
 
-export async function shopifyPrivateFetch({ query, variables }: { query: string; variables?: any }) {
-  const endpoint = process.env.SHOPIFY_STORE_DOMAIN;
-  const key = process.env.SHOPIFY_STOREFRONT_PRIVATE_ACCESS_TOKEN;
+const endpoint = process.env.SHOPIFY_STORE_DOMAIN;
+const key = process.env.SHOPIFY_STOREFRONT_PRIVATE_ACCESS_TOKEN;
+const apiVersion = process.env.SHOPIFY_STOREFRONT_API_VERSION;
 
+export async function shopifyPrivateFetch({ query, variables }: { query: string; variables?: any }) {
   try {
-    const result = await fetch(`https://${endpoint}/api/2023-07/graphql.json`, {
+    const result = await fetch(`https://${endpoint}/api/${apiVersion}/graphql.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
