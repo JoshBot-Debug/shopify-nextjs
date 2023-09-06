@@ -15,13 +15,15 @@ export default function Navigation() {
       <Container maxWidth="lg">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Image
-              priority
-              src={logo}
-              height={128}
-              width={128}
-              alt="Logo"
-            />
+            <Link href={"/"}>
+              <Image
+                priority
+                src={logo}
+                height={128}
+                width={128}
+                alt="Logo"
+              />
+            </Link>
             <SearchBar />
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -31,7 +33,7 @@ export default function Navigation() {
           </Box>
         </Toolbar>
       </Container>
-      <Toolbar sx={{ backgroundColor: "secondary.main", display: "flex", justifyContent: "center",  gap: 2 }}>
+      <Toolbar sx={{ backgroundColor: "secondary.main", display: "flex", justifyContent: "center", gap: 2 }}>
         <Link href={"#"}><Typography>Boys Fasion</Typography></Link>
         <Link href={"#"}><Typography>Girls Fasion</Typography></Link>
         <Link href={"#"}><Typography>Footwear</Typography></Link>

@@ -1,11 +1,10 @@
 import Banner from '@/components/Banner'
-import Navigation from '@/components/Navigation'
 import ProductsList from '@/components/ProductList'
-import { shopifyFetch } from '@/shopify/shopifyFetch'
-import { Box, Container } from '@mui/material'
+import { shopifyPrivateFetch } from '@/shopify/shopifyPrivateFetch'
+import { Container } from '@mui/material'
 
 async function getAllProducts() {
-  return shopifyFetch({
+  return shopifyPrivateFetch({
     query: `{
       products(sortKey:TITLE, first:100){
         nodes {
@@ -24,15 +23,14 @@ async function getAllProducts() {
 
 export default async function Home() {
 
-  const products = await getAllProducts(); 
+  const products = await getAllProducts();
 
   return (
-    <Box>
-      <Navigation />
+    <>
       <Banner />
       <Container maxWidth="lg">
         <ProductsList products={products.body.data.products.nodes} />
       </Container>
-    </Box>
+    </>
   )
 }

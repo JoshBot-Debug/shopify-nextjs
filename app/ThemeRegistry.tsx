@@ -11,10 +11,10 @@ import React from 'react';
 export const themeOptions = createTheme({
   palette: {
     primary: {
-      main: '#fff',
+      main: '#055',
     },
     secondary: {
-      main: '#ffd91c',
+      main: '#fff',
     },
   },
 });
